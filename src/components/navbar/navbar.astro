@@ -3,9 +3,10 @@ import Container from "@components/container.astro";
 import Link from "@components/ui/link.astro";
 import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import { Picture } from "astro:assets";
+import Logo from "assets/EMERGING MEDIA LOGO_WHITE_TRANSPRANT.png";
 
 const menuitems = [
-
   {
     title: "Home",
     path: "/",
@@ -52,13 +53,23 @@ const menuitems = [
   <header class="flex flex-col lg:flex-row justify-between items-center my-5">
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
-        <a href="/" class="text-lg"
-          ><span class="font-bold text-slate-800">Astro</span><span
+        <a href="/" class="w-10 h-8 flex items-center gap-2 object-contain">
+          <Picture
+            src={Logo}
+            alt="Astronaut in the air"
+            widths={[40, 80, 120]}
+            sizes="(max-width: 640px) 40px, 80px"
+            loading="eager"
+            format="webp,png"
+            class="object-contain"
+          />
+
+          <!-- <span class="font-bold text-slate-800">Astro</span><span
             class="text-slate-500">ship</span
-          >
+          > -->
         </a>
         <div class="block lg:hidden">
-          <MenuIcon class="w-4 h-4 text-gray-800" />
+          <MenuIcon class="w-8 h-8 text-purple-500" />
         </div>
       </div>
       <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
@@ -93,15 +104,15 @@ const menuitems = [
           }
         </ul>
         <div class="lg:hidden flex items-center mt-3 gap-4">
-          <Link href="#" style="muted" block size="md">Log in</Link>
+          <!-- <Link href="#" style="muted" block size="md">Log in</Link> -->
           <Link href="#" size="md" block>Sign up</Link>
         </div>
       </MenuItems>
     </Astronav>
     <div>
       <div class="hidden lg:flex items-center gap-4">
-        <a href="#">Log in</a>
-        <Link href="#" size="md">Sign up</Link>
+        <!-- <a href="#">Log in</a> -->
+        <Link href="#" size="md">Schedule a Call</Link>
       </div>
     </div>
   </header>
