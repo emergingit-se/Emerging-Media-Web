@@ -5,7 +5,16 @@ import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
 const menuitems = [
-
+  {
+    title: "Features",
+    path: "#",
+    children: [
+      { title: "Action", path: "/" },
+      { title: "Another action", path: "#" },
+      { title: "Dropdown Submenu", path: "#" },
+      { title: "404 Page", path: "/404" },
+    ],
+  },
   {
     title: "Home",
     path: "/",
@@ -29,22 +38,12 @@ const menuitems = [
   {
     title: "Contact",
     path: "/contact",
-  }
-  // {
-  //   title: "Pro Version",
-  //   badge: true,
-  //   path: "https://astroship-pro.web3templates.com/",
-  // },
-  // {
-  //   title: "Features",
-  //   path: "#",
-  //   children: [
-  //     { title: "Action", path: "/" },
-  //     { title: "Another action", path: "#" },
-  //     { title: "Dropdown Submenu", path: "#" },
-  //     { title: "404 Page", path: "/404" },
-  //   ],
-  // },
+  },
+  {
+    title: "Pro Version",
+    badge: true,
+    path: "https://astroship-pro.web3templates.com/",
+  },
 ];
 ---
 
