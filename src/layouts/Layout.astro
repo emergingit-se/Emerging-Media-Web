@@ -57,13 +57,10 @@ const makeTitle = title
     />
   </head>
   <body>
-    <!-- if (isHome) {
-      <Navbar />
-      <slot />
-      <Footer/>
-    } else { -->
-    <Navbar />
+    {isHome ? "" : <Navbar />}
+    <!-- Only render Header on non-home pages -->
     <slot />
+    <!-- Page content goes here -->
     <Footer />
     <!-- } -->
     <style is:global>
