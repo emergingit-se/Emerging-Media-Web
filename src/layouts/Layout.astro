@@ -3,15 +3,15 @@ import { SEO } from "astro-seo";
 import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
 import "@fontsource-variable/inter/index.css";
-import '@fontsource-variable/bricolage-grotesque';
-
-
+import "@fontsource-variable/bricolage-grotesque";
 
 export interface Props {
   title: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+
+const isHome = Astro.url.pathname === "/";
 
 const resolvedImageWithDomain = new URL(
   "/opengraph.jpg",
@@ -25,7 +25,7 @@ const makeTitle = title
   : "Emerging Media - LARGEST LOCATION BASED DIGITAL LED DISPLAY ADVERTISING NETWORK IN SRI LANKA";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -36,30 +36,34 @@ const makeTitle = title
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description="Astroship is a starter website template for Astro built with TailwindCSS."
+      description="Emerging Media LK specializes in outdoor advertising for high brand impact."
       canonical={canonicalURL}
       twitter={{
-        creator: "@surjithctly",
-        site: "@web3templates",
+        creator: "@hesha",
+        site: "@emergingmedia",
         card: "summary_large_image",
       }}
       openGraph={{
         basic: {
           url: canonicalURL,
           type: "website",
-          title: `Astroship - Starter Template for Astro`,
+          title: `Emerging Media - LARGEST LOCATION BASED DIGITAL LED DISPLAY ADVERTISING NETWORK IN SRI LANKA`,
           image: resolvedImageWithDomain,
         },
         image: {
-          alt: "Astroship Homepage Screenshot",
+          alt: "Emerging Media Homepage Screenshot",
         },
       }}
     />
   </head>
   <body>
-    <Navbar />
+    {isHome ? null : <Navbar />}
+
+    <!-- Only render Header on non-home pages -->
     <slot />
+    <!-- Page content goes here -->
     <Footer />
+    <!-- } -->
     <style is:global>
       /* Improve Page speed */
       /* https://css-tricks.com/almanac/properties/c/content-visibility/ */

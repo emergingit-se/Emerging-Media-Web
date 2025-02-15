@@ -1,33 +1,156 @@
 ---
 import { Picture } from "astro:assets";
-import heroImage from "assets/hero.png";
-import Link from "@components/ui/link.astro";
-import { Icon } from "astro-icon/components";
+import imageUrl from "assets/Background.jpg";
+import Link from "./ui/link.astro";
+import Dropdown from "./navbar/dropdown.astro";
+import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import Logo from "assets/EMERGING MEDIA LOGO_WHITE_TRANSPRANT.png";
+import type MenuItem from "types/interfaces.ts";
+
+const menuitems: MenuItem[] = [
+  {
+    title: "Home",
+    path: "/",
+    alt: "",
+    description: ""
+  },
+  {
+    title: "About",
+    path: "/about",
+    alt: "",
+    description: ""
+  },
+  {
+    title: "Services",
+    path: "/services",
+    alt: "",
+    description: ""
+  },
+  {
+    title: "News",
+    path: "/news",
+    alt: "",
+    description: ""
+  },
+  {
+    title: "Careers",
+    path: "/careers",
+    alt: "",
+    description: ""
+  },
+  {
+    title: "Contact",
+    path: "/contact",
+    alt: "",
+    description: ""
+  },
+  // {
+  //   title: "Pro Version",
+  //   badge: true,
+  //   path: "https://astroship-pro.web3templates.com/",
+  // },
+  // {
+  //   title: "Features",
+  //   path: "#",
+  //   children: [
+  //     { title: "Action", path: "/" },
+  //     { title: "Another action", path: "#" },
+  //     { title: "Dropdown Submenu", path: "#" },
+  //     { title: "404 Page", path: "/404" },
+  //   ],
+  // },
+];
 ---
 
-<main
-  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
-  <div class="py-6 md:order-1 hidden md:block">
-    <Picture
-      src={heroImage}
-      alt="Astronaut in the air"
-      widths={[200, 400, 600]}
-      sizes="(max-width: 800px) 100vw, 620px"
-      loading="eager"
-      format="avif"
-    />
-  </div>
-  <div>
+<main class="relative w-full h-screen flex flex-col">
+  <!-- Background Image -->
+  <Picture
+    src={imageUrl}
+    alt="Background Image"
+    class="absolute inset-0 w-full h-full object-cover -z-10 bg-black/70"
+  />
+  <header
+    class="flex flex-col lg:flex-row justify-between items-center my-5 px-5">
+    <Astronav>
+      <div class="flex w-full lg:w-auto items-center justify-between">
+        <a href="/" class="w-10 h-8 flex items-center gap-2 object-contain">
+          <div class="absolute inset-0 bg-black opacity-70"></div>
+          <Picture
+            src={Logo}
+            alt="Astronaut in the air"
+            widths={[40, 80, 120]}
+            sizes="(max-width: 640px) 40px, 80px"
+            loading="eager"
+            format="webp,png"
+            class="object-contain black-opacity-50"
+          />
+          
+          <!-- <span class="font-bold text-slate-800">Astro</span><span
+            class="text-slate-500">ship</span
+          > -->
+        </a>
+        <div class="block lg:hidden z-10">
+          <MenuIcon class="w-8 h-8 text-white" />
+        </div>
+      </div>
+      <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0 z-10">
+        <ul class="flex flex-col lg:flex-row lg:gap-3">
+          {
+            menuitems.map((item, index) => (
+              <>
+                {item?.children && (
+                  <Dropdown
+                    title={item.title}
+                    children={item?.children}
+                    lastItem={index === menuitems.length - 1}
+                  />
+                )}
+
+                {!item?.children && (
+                  <li>
+                    <a
+                      href={item.path}
+                      class="flex lg:px-3 py-2 items-center text-white hover:text-[#0A91D9]">
+                      <span> {item.title}</span>
+                      {item?.badge && (
+                        <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-indigo-600 rounded-full">
+                          New
+                        </span>
+                      )}
+                    </a>
+                  </li>
+                )}
+              </>
+            ))
+          }
+        </ul>
+        <div class="lg:hidden flex items-center mt-3 gap-4">
+          <!-- <Link href="#" style="muted" block size="md">Log in</Link> -->
+          <Link href="#" size="md" block>Sign up</Link>
+        </div>
+      </MenuItems>
+    </Astronav>
+    <div class="z-10">
+      <div class="hidden lg:flex items-center gap-4">
+        <!-- <a href="#">Log in</a> -->
+        <Link href="#" size="md">Schedule a Call</Link>
+      </div>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <div class="text-white text-center justify-center flex flex-col items-center h-screen z-10">
+    <div class="p-5 rounded-lg">
     <h1
-      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
+      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter p-3">
       Unleash Impactful OOH Advertising
     </h1>
-    <p class="text-lg mt-4 text-slate-600 max-w-xl">
+    <p class="text-lg mt-4 text-white-600 max-w-xl justify-center mx-auto">
       Emerging Media creates bold, high-impact OOH campaigns that drive
       real-world results, capture attention like never before, and elevate your
       brand’s presence in the world.
     </p>
-    <div class="mt-6 flex flex-col sm:flex-row gap-3">
+    <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
       <Link
         href="#"
         href="https://web3templates.com/templates/astroship-starter-website-template-for-astro"
@@ -37,5 +160,6 @@ import { Icon } from "astro-icon/components";
         Scedule a Call
       </Link>
     </div>
+  </div>
   </div>
 </main>
