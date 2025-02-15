@@ -8,21 +8,21 @@ import type Item from "types/interfaces.ts";
 const menuitems: Item[] = [
   {
     title: "Mission",
-    path: Mission.src,
+    path: Mission,
     alt: "Mission",
     description:
       "To be the best location based digital display advertising company within the next five years in Sri Lanka.",
   },
   {
     title: "About",
-    path: About.src,
+    path: About,
     alt: "About",
     description:
       "To be the best location based digital display advertising company within the next five years in Sri Lanka.",
   },
   {
     title: "Vision",
-    path: Vision.src,
+    path: Vision,
     alt: "Vision",
     description:
       "To be the best location based digital display advertising company within the next five years in Sri Lanka.",
@@ -36,8 +36,8 @@ const menuitems: Item[] = [
       <div class="group">
         <div class="w-full bg-slate-200 rounded-md transition group-hover:-translate-y-1">
           <Picture
-            src={teamMemberEntry?.path as string}
-            alt={teamMemberEntry?.alt as string}
+            src={teamMemberEntry?.path}
+            alt={teamMemberEntry?.alt}
             sizes="(max-width: 800px) 100vw, 400px"
             width={400}
             height={400}
