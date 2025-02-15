@@ -6,30 +6,42 @@ import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 import { Picture } from "astro:assets";
 import Logo from "assets/EMERGING MEDIA LOGO_WHITE_TRANSPRANT.png";
 import type MenuItem from "types/interfaces.ts";
-const menuitems : MenuItem[] = [
+const menuitems: MenuItem[] = [
   {
     title: "Home",
     path: "/",
+    alt: "",
+    description: "",
   },
   {
     title: "About",
     path: "/about",
+    alt: "",
+    description: "",
   },
   {
     title: "Services",
     path: "/services",
+    alt: "",
+    description: "",
   },
   {
     title: "News",
     path: "/news",
+    alt: "",
+    description: "",
   },
   {
     title: "Careers",
     path: "/careers",
+    alt: "",
+    description: "",
   },
   {
     title: "Contact",
     path: "/contact",
+    alt: "",
+    description: "",
   },
   // {
   //   title: "Pro Version",
@@ -50,7 +62,8 @@ const menuitems : MenuItem[] = [
 ---
 
 <Container>
-  <header class="flex flex-col lg:flex-row justify-between items-center my-5">
+  <header
+    class="flex flex-col lg:flex-row justify-between items-center my-5 px-5">
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
         <a href="/" class="w-10 h-8 flex items-center gap-2 object-contain">

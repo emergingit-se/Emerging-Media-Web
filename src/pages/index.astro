@@ -6,14 +6,18 @@ import Hero from "@components/hero.astro";
 import Logos from "@components/logos.astro";
 import Layout from "@layouts/Layout.astro";
 import VideoPlayer from "@components/videoPlayer.astro";
+import Visionsection from "@components/visionsection.astro";
 ---
 
 <Layout title="">
   <Container>
     <Hero />
-    <Features />
-    <VideoPlayer />
-    <Logos />
-    <Cta />
+    <!-- <Visionsection /> -->
+    <div class="px-5">
+      <Features />
+      <VideoPlayer />
+      <Logos />
+      <Cta />
+    </div>
   </Container>
 </Layout>
