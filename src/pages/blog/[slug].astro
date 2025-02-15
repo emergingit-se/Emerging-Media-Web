@@ -7,8 +7,6 @@ import Container from "@components/container.astro";
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
 
-  console.log("Fetched blog entries:", blogEntries);
-
   return blogEntries.map((entry) => {
     console.log("Processing entry:", entry.slug); // Debugging log
     return {
