@@ -62,6 +62,7 @@ const menuitems: MenuItem[] = [
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
         <a href="/" class="w-10 h-8 flex items-center gap-2 object-contain">
+          <div class="absolute inset-0 bg-black opacity-70"></div>
           <Picture
             src={Logo}
             alt="Astronaut in the air"
@@ -69,18 +70,18 @@ const menuitems: MenuItem[] = [
             sizes="(max-width: 640px) 40px, 80px"
             loading="eager"
             format="webp,png"
-            class="object-contain"
+            class="object-contain black-opacity-50"
           />
-
+          
           <!-- <span class="font-bold text-slate-800">Astro</span><span
             class="text-slate-500">ship</span
           > -->
         </a>
-        <div class="block lg:hidden">
-          <MenuIcon class="w-8 h-8 text-[#0A91D9]" />
+        <div class="block lg:hidden z-10">
+          <MenuIcon class="w-8 h-8 text-white" />
         </div>
       </div>
-      <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
+      <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0 z-10">
         <ul class="flex flex-col lg:flex-row lg:gap-3">
           {
             menuitems.map((item, index) => (
@@ -97,7 +98,7 @@ const menuitems: MenuItem[] = [
                   <li>
                     <a
                       href={item.path}
-                      class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900">
+                      class="flex lg:px-3 py-2 items-center text-white hover:text-[#0A91D9]">
                       <span> {item.title}</span>
                       {item?.badge && (
                         <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-indigo-600 rounded-full">
@@ -117,7 +118,7 @@ const menuitems: MenuItem[] = [
         </div>
       </MenuItems>
     </Astronav>
-    <div>
+    <div class="z-10">
       <div class="hidden lg:flex items-center gap-4">
         <!-- <a href="#">Log in</a> -->
         <Link href="#" size="md">Schedule a Call</Link>
@@ -126,13 +127,13 @@ const menuitems: MenuItem[] = [
   </header>
 
   <!-- Content -->
-  <div class="text-black text-center justify-center flex flex-col items-center h-screen">
+  <div class="text-white text-center justify-center flex flex-col items-center h-screen z-10">
     <div class="p-5 rounded-lg">
     <h1
       class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter p-3">
       Unleash Impactful OOH Advertising
     </h1>
-    <p class="text-lg mt-4 text-slate-600 max-w-xl justify-center mx-auto">
+    <p class="text-lg mt-4 text-white-600 max-w-xl justify-center mx-auto">
       Emerging Media creates bold, high-impact OOH campaigns that drive
       real-world results, capture attention like never before, and elevate your
       brand’s presence in the world.
