@@ -1,3 +1,5 @@
+import type { ImageMetadata } from 'astro';
+
 export default interface MenuItem {
     title: string;
     path?: string;
@@ -7,10 +9,11 @@ export default interface MenuItem {
 
 export default interface Item {
     title: string;
-    path?: string;
+    path?: string | ImageMetadata;
     alt?: string;
     description?: string;
-    }
+
+}
 
 
 

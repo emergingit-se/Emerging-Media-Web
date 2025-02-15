@@ -1,28 +1,32 @@
 ---
-import { Picture } from "astro:assets";
+import { Picture, Image, getImage } from "astro:assets";
 import Mission from "assets/mission.jpg";
 import Vision from "assets/vision.jpg";
 import About from "assets/about.jpg";
 import type Item from "types/interfaces.ts";
 
+const optimizedBackground = await getImage({ src: Mission, format: "webp" });
+const optimizedBackground1 = await getImage({ src: Vision, format: "webp" });
+const optimizedBackground2 = await getImage({ src: About, format: "webp" });
+
 const menuitems: Item[] = [
   {
     title: "Mission",
-    path: Mission,
+    path: optimizedBackground.src!,
     alt: "Mission",
     description:
       "To be the best location based digital display advertising company within the next five years in Sri Lanka.",
   },
   {
     title: "About",
-    path: About,
+    path: optimizedBackground2.src!,
     alt: "About",
     description:
       "To be the best location based digital display advertising company within the next five years in Sri Lanka.",
   },
   {
     title: "Vision",
-    path: Vision,
+    path: optimizedBackground1.src!,
     alt: "Vision",
     description:
       "To be the best location based digital display advertising company within the next five years in Sri Lanka.",
@@ -35,17 +39,18 @@ const menuitems: Item[] = [
     menuitems.map((teamMemberEntry) => (
       <div class="group">
         <div class="w-full bg-slate-200 rounded-md transition group-hover:-translate-y-1">
-          <Picture
-            src={teamMemberEntry?.path}
-            alt={teamMemberEntry?.alt}
+          <Image
+            src={teamMemberEntry.path ?? ""}
+            alt={teamMemberEntry.alt ?? ""}
             sizes="(max-width: 800px) 100vw, 400px"
             width={400}
             height={400}
             class="w-full rounded-md group-hover:shadow-xl bg-white object-cover object-center"
+            format="jpg"
           />
           <div class="text-center p-4">
-            <h2 class="text-lg text-black">{teamMemberEntry?.title}</h2>
-            <p class="text-sm text-slate-500">{teamMemberEntry?.description}</p>
+            <h2 class="text-lg text-black">{teamMemberEntry.title}</h2>
+            <p class="text-sm text-slate-500">{teamMemberEntry.description}</p>
           </div>
         </div>
       </div>
