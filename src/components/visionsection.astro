@@ -6,7 +6,7 @@ import About from "assets/about.jpg";
 
 const menuitems: any = [
   {
-    title: "Home",
+    title: "Mission",
     path: Mission,
     alt: "Mission",
     description:
@@ -20,7 +20,7 @@ const menuitems: any = [
       "To be the best location based digital display advertising company within the next five years in Sri Lanka.",
   },
   {
-    title: "About",
+    title: "Vision",
     path: Vision,
     alt: "Vision",
     description:
@@ -29,7 +29,7 @@ const menuitems: any = [
 ];
 ---
 
-<div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl my-12 md:mx-10">
+<div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl my-12 px-5">
   {
     menuitems.map((teamMemberEntry) => (
       <div class="group">
@@ -43,7 +43,7 @@ const menuitems: any = [
             class="w-full rounded-md group-hover:shadow-xl bg-white object-cover object-center"
           />
           <div class="text-center p-4">
-            <h2 class="text-lg text-gray-800">{teamMemberEntry?.title}</h2>
+            <h2 class="text-lg text-black">{teamMemberEntry?.title}</h2>
             <p class="text-sm text-slate-500">{teamMemberEntry?.description}</p>
           </div>
         </div>
