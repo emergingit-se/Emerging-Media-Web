@@ -4,3 +4,13 @@ export default interface MenuItem {
     badge?: boolean;
     children?: MenuItem[];
 }
+
+export default interface Item {
+    title: string;
+    path?: string;
+    alt?: string;
+    description?: string;
+    }
+
+
+
