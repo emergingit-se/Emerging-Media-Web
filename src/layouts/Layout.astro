@@ -15,7 +15,7 @@ const isHome = Astro.url.pathname === "/";
 
 const resolvedImageWithDomain = new URL(
   "/opengraph.jpg",
-  Astro.site
+  Astro.site,
 ).toString();
 
 const { title } = Astro.props;
