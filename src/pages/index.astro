@@ -7,7 +7,21 @@ import Logos from "@components/logos.astro";
 import Layout from "@layouts/Layout.astro";
 import VideoPlayer from "@components/videoPlayer.astro";
 import Visionsection from "@components/visionsection.astro";
+
+const metaDescription =
+  "Explore our advertising solutions including outdoor LED advertising, indoor advertising, events, branding, and production services.";
+const metaTitle = "Advertising Solutions";
+const metaKeywords =
+  "outdoor advertising,indoor advertising,events,branding,production";
 ---
+
+<head>
+  <meta name="description" content={metaDescription} />
+  <meta property="og:title" content="Advertising Solutions" />
+  <meta property="og:description" content={metaDescription} />
+  <meta property="title" content={metaTitle} />
+  <meta property="keywords" content={metaKeywords} />
+</head>
 
 <Layout title="">
   <Container>
