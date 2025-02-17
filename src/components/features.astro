@@ -15,9 +15,15 @@ const optimizedBackground2 = await getImage({ src: Event, format: "webp" });
 const optimizedBackground3 = await getImage({ src: Hoarding, format: "webp" });
 const optimizedBackground4 = await getImage({
   src: Production,
-  format: "webp",
+  format: "webp,jpg",
 });
 const optimizedBackground5 = await getImage({ src: Project, format: "webp" });
+
+const metaDescription =
+  "Explore our advertising solutions including outdoor LED advertising, indoor advertising, events, branding, and production services.";
+const metaTitle = "Advertising Solutions";
+const metaKeywords =
+  "outdoor advertising,indoor advertising,events,branding,production";
 
 const features = [
   {
@@ -66,6 +72,15 @@ const features = [
 ];
 ---
 
+<head>
+  <meta name="description" content={metaDescription} />
+  <meta property="og:title" content="Advertising Solutions" />
+  <meta property="og:description" content={metaDescription} />
+  <meta property="og:image" content={optimizedBackground.src!} />
+  <meta property="title" content={metaTitle} />
+  <meta property="keywords" content={metaKeywords} />
+</head>
+
 <div class="mt-16">
   <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight capitalize">
     advertising solutions
@@ -86,7 +101,7 @@ const features = [
           sizes="(max-width: 800px) 100vw, 400px"
           width={400}
           height={400}
-          class="w-full rounded-md group-hover:shadow-xl bg-white object-cover object-center"
+          class="w-full rounded-md group-hover:shadow-xl bg-white object-cover object-center "
           format="jpg"
         />
         <div class="mt-1 bg-[#0A91D9] rounded-full  p-2 w-8 h-8 shrink-0">
