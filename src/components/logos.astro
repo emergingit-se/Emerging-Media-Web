@@ -1,18 +1,108 @@
 ---
 // @ts-ignore
 import { Icon } from "astro-icon/components";
+import AirArabia from "assets/Brands/Air_Arabia-Logo.wine.png";
+import Daraz from "assets/Brands/Daraz_logo_color.png";
+import Emirates from "assets/Brands/Emirates-Logo.png";
+import SpaCeylon from "assets/Brands/spaceylon.jpg";
+import Commercial from "assets/Brands/commercial.png";
+import PortCity from "assets/Brands/portcity.png";
+import WaterEdge from "assets/Brands/watersedge.png";
+import CBL from "assets/Brands/cbl.png";
+import Nolimit from "assets/Brands/nolimit.png";
+import Nestle from "assets/Brands/nestle.png";
+import SLT from "assets/Brands/slt.png";
+import CocaCola from "assets/Brands/Coca-Cola_logo.svg.png";
+import Nippon from "assets/Brands/Nippon-Paint-logo.jpg";
+import Softlogic from "assets/Brands/Softlogic-tagline-logo.png";
+import ElephantHouse from "assets/Brands/elephanthouse.png";
+import Cetaphil from "assets/Brands/cetaphil.jpg";
+import { imageConfig, Picture } from "astro:assets";
+
+const Brands = [
+  {
+    title: "Daraz",
+    image: Daraz,
+  },
+  {
+    title: "Emirates",
+    image: Emirates,
+  },
+  {
+    title: "Spa Ceylon",
+    image: SpaCeylon,
+  },
+  {
+    title: "Commercial Bank",
+    image: Commercial,
+  },
+  {
+    title: "Port City",
+    image: PortCity,
+  },
+  {
+    title: "Waters Edge",
+    image: WaterEdge,
+  },
+  {
+    title: "CBL",
+    image: CBL,
+  },
+  {
+    title: "Nolimit",
+    image: Nolimit,
+  },
+  {
+    title: "Nestle",
+    image: Nestle,
+  },
+  {
+    title: "SLT",
+    image: SLT,
+  },
+  {
+    title: "Coca Cola",
+    image: CocaCola,
+  },
+  {
+    title: "Nippon Paint",
+    image: Nippon,
+  },
+  {
+    title: "Softlogic",
+    image: Softlogic,
+  },
+  {
+    title: "Elephant House",
+    image: ElephantHouse,
+  },
+  {
+    title: "Cetaphil",
+    image: Cetaphil,
+  },
+  {
+    title: "Air Arabia",
+    image: AirArabia,
+  },
+];
 ---
 
 <div class="mt-24">
-  <h2 class="text-center text-slate-500">Works with your technologies</h2>
+  <h2 class="text-center text-slate-500 text-2xl">Our Clients</h2>
   <div class="flex gap-8 md:gap-20 items-center justify-center mt-10 flex-wrap">
-
-    <Icon class="size-8 md:size-12" name="simple-icons:react" />
-    <Icon class="size-8 md:size-12" name="simple-icons:svelte" />
-    <Icon class="size-8 md:size-12" name="simple-icons:astro" />
-    <Icon class="size-8 md:size-16" name="simple-icons:tailwindcss" />
-    <Icon class="size-8 md:size-16" name="simple-icons:alpinedotjs" />
-    <Icon class="size-8 md:size-12" name="simple-icons:vercel" />
-
+    {
+      Brands.map((brand) => (
+        <picture>
+          {/* <source srcSet={brand.image} type="image/webp" /> */}
+          <Picture
+            src={brand.image}
+            alt={brand.title}
+            class="size-8 md:size-24 object-contain"
+            loading="lazy"
+            format="webp"
+          />
+        </picture>
+      ))
+    }
   </div>
 </div>
