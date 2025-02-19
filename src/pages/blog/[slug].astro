@@ -14,7 +14,18 @@ export async function getStaticPaths() {
 }
 
 // Get the entry directly from the prop on render
-const { entry } = Astro.props;
+interface BlogEntry {
+  render: () => Promise<{ Content: any }>;
+  data: {
+    title: string;
+    category: string;
+    author: string;
+    publishDate: Date;
+    tags: string[];
+  };
+}
+
+const { entry } = Astro.props as { entry: BlogEntry };
 const { Content } = await entry.render();
 ---
 
