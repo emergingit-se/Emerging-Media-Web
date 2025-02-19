@@ -1,0 +1,91 @@
+---
+
+---
+
+<style>
+  body {
+    text-align: center;
+  }
+  .counter-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .counter-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: calc(20% - 20px);
+  }
+
+  @media (max-width: 480px) {
+    .counter-box {
+      width: 100%;
+    }
+  }
+
+  .counter {
+    font-size: 48px;
+    font-weight: bold;
+    color: #0096c7;
+  }
+
+  .label {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+  }
+</style>
+
+<div class="my-24">
+  <h2 class="text-4xl md:text-5xl font-bold">Our Achievements</h2>
+  <p class="text-2xl my-5"><strong>15 Years of Industry Experience</strong></p>
+
+  <div class="counter-container">
+    <div class="counter-box">
+      <span class="counter" data-target="350">0</span>
+      <p class="label">Clients</p>
+    </div>
+    <div class="counter-box">
+      <span class="counter" data-target="150">0</span>
+      <p class="label">Projects</p>
+    </div>
+    <div class="counter-box">
+      <span class="counter" data-target="250">0</span>
+      <p class="label">Locations</p>
+    </div>
+    <div class="counter-box">
+      <span class="counter" data-target="15">0</span>
+      <p class="label">Awards Won</p>
+    </div>
+  </div>
+
+  <script>
+    function startCounters() {
+      const counters = document.querySelectorAll(".counter");
+
+      counters.forEach((counter) => {
+        const target = +counter.getAttribute("data-target");
+        const increment = target / 100; // Adjust speed
+        let count = 0;
+
+        const updateCounter = () => {
+          if (count < target) {
+            count += increment;
+            counter.innerText = Math.floor(count);
+            setTimeout(updateCounter, 20); // Adjust speed
+          } else {
+            counter.innerText = target;
+          }
+        };
+
+        updateCounter();
+      });
+    }
+
+    window.onload = startCounters;
+  </script>
+</div>
