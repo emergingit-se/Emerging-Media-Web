@@ -5,6 +5,7 @@ import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import Directors from "@components/about/directors.astro";
+import Group from "@components/about/group.astro";
 ---
 
 <Container>
@@ -13,8 +14,9 @@ import Directors from "@components/about/directors.astro";
       <Fragment slot="title">About</Fragment>
       <Fragment slot="desc">We are a small passionate team.</Fragment>
     </Sectionhead>
-    <Directors/>
+    <Directors />
     <CEO />
     <Management />
+    <Group />
   </Layout>
 </Container>
