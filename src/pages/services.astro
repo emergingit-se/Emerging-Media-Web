@@ -1,0 +1,95 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+import LEDOutdoor from "assets/LED - Outdoor.jpg";
+import Salon from "assets/Salon.jpg";
+import Event from "assets/Event.jpg";
+import Hoarding from "assets/Hoarding & Branding.jpg";
+import Production from "assets/Production (1).jpg";
+import Project from "assets/OGF_NOLIMIT.png";
+import { Picture, getImage } from "astro:assets";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Features from "@components/features.astro";
+
+const optimizedBackground = await getImage({ src: LEDOutdoor, format: "webp" });
+const optimizedBackground1 = await getImage({ src: Salon, format: "webp" });
+const optimizedBackground2 = await getImage({ src: Event, format: "webp" });
+const optimizedBackground3 = await getImage({ src: Hoarding, format: "webp" });
+const optimizedBackground4 = await getImage({
+  src: Production,
+  format: "webp",
+});
+const optimizedBackground5 = await getImage({ src: Project, format: "webp" });
+
+const metaDescription =
+  "Explore our advertising solutions including outdoor LED advertising, indoor advertising, events, branding, and production services.";
+const metaTitle = "Advertising Solutions";
+const metaKeywords =
+  "outdoor advertising,indoor advertising,events,branding,production";
+
+const features = [
+  {
+    title: "Outdoor LED Advertising",
+    description:
+      "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
+    icon: "bx:bxs-briefcase",
+    image: optimizedBackground.src!,
+  },
+  {
+    title: "Indoor LED Advertising",
+    description:
+      "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
+    icon: "bx:bxs-window-alt",
+    image: optimizedBackground1.src!,
+  },
+  {
+    title: "Events",
+    description:
+      "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!",
+    icon: "bx:bxs-file-find",
+    image: optimizedBackground2.src!,
+  },
+  {
+    title: "Hoardings and Branding",
+    description:
+      "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.",
+    icon: "bx:bxs-bot",
+    image: optimizedBackground3.src!,
+  },
+
+  {
+    title: "Productions",
+    description:
+      "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
+    icon: "bx:bxs-user",
+    image: optimizedBackground4.src!,
+  },
+  {
+    title: "Projects",
+    description:
+      "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
+    icon: "bx:bxs-user",
+    image: optimizedBackground5.src!,
+  },
+];
+---
+
+<head>
+  <meta name="description" content={metaDescription} />
+  <meta property="og:title" content="Advertising Solutions" />
+  <meta property="og:description" content={metaDescription} />
+  <meta property="og:image" content={optimizedBackground.src!} />
+  <meta property="title" content={metaTitle} />
+  <meta property="keywords" content={metaKeywords} />
+</head>
+
+<Container>
+  <Layout title="Services">
+    <Sectionhead>
+      <Fragment slot="title">Services</Fragment>
+    </Sectionhead>
+    <div class="px-5 mb-12"><Features features={features} /></div>
+  </Layout>
+</Container>
