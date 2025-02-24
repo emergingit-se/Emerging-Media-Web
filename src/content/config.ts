@@ -36,6 +36,7 @@ const ceoCollection = defineCollection({
     draft: z.boolean(),
     name: z.string(),
     title: z.string(),
+    description: z.string(),
     avatar: z.object({
       src: z.string(),
       alt: z.string(),
@@ -48,6 +49,7 @@ const directorsCollection = defineCollection({
     draft: z.boolean(),
     name: z.string(),
     title: z.string(),
+    description: z.string(),
     avatar: z.object({
       src: z.string(),
       alt: z.string(),
