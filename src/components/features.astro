@@ -101,29 +101,29 @@ const features = [
   {
     features.map((item) => (
       <a href={item?.link}>
-      <div class="flex flex-col bg-slate-50 p-4 rounded-md transition-transform duration-300 hover:scale-110">        
-      <Picture
-          src={item?.image ?? ""}
-          alt={item?.title ?? ""}
-          sizes="(max-width: 800px) 100vw, 400px"
-          width={400}
-          height={400}
-          class="w-full rounded-md group-hover:shadow-xl bg-white object-cover object-center "
-          format="jpg"
-        />
-        <div class="flex gap-2 items-center justify-center my-2">
-          <div class="mt-1 bg-[#0A91D9] rounded-full  p-2 w-8 h-8 shrink-0">
-            <Icon class="text-white" name={item.icon} />
+        <div class="flex flex-col bg-slate-50 p-4 rounded-md transition-transform duration-300 hover:scale-110">
+          <Picture
+            src={item?.image ?? ""}
+            alt={item?.title ?? ""}
+            sizes="(max-width: 800px) 100vw, 400px"
+            width={400}
+            height={400}
+            class="w-full rounded-md group-hover:shadow-xl bg-white object-cover object-center "
+            format="jpg"
+          />
+          <div class="flex gap-2 items-center justify-center my-2">
+            <div class="mt-1 bg-[#0A91D9] rounded-full  p-2 w-8 h-8 shrink-0">
+              <Icon class="text-white" name={item.icon} />
+            </div>
+            <h3 class="font-semibold text-lg text-[#0A91D9]">
+              {item.title}
+            </h3>{" "}
           </div>
-          <h3 class="font-semibold text-lg text-[#0A91D9]">
-            {item.title}
-          </h3>{" "}
+          <div>
+            <p class="text-slate-500 mt-2">{item.description}</p>
+          </div>
         </div>
-        <div>
-          <p class="text-slate-500 mt-2">{item.description}</p>
-        </div>
-      </div>
-    </a>
+      </a>
     ))
   }
 </div>
