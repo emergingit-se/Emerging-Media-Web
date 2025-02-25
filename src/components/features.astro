@@ -28,6 +28,7 @@ const metaKeywords =
 const features = [
   {
     title: "Outdoor LED Advertising",
+    link: "/services/outdoor-led-advertising",
     description:
       "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
     icon: "bx:bxs-briefcase",
@@ -35,6 +36,7 @@ const features = [
   },
   {
     title: "Indoor LED Advertising",
+    link: "/services/indoor-led-advertising",
     description:
       "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
     icon: "bx:bxs-window-alt",
@@ -42,6 +44,7 @@ const features = [
   },
   {
     title: "Events",
+    link: "/services/events",
     description:
       "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!",
     icon: "bx:bxs-file-find",
@@ -49,6 +52,7 @@ const features = [
   },
   {
     title: "Hoardings and Branding",
+    link: "/services/hoardings-and-branding",
     description:
       "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.",
     icon: "bx:bxs-bot",
@@ -57,6 +61,7 @@ const features = [
 
   {
     title: "Productions",
+    link: "/services/productions",
     description:
       "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
     icon: "bx:bxs-user",
@@ -64,6 +69,7 @@ const features = [
   },
   {
     title: "Projects",
+    link: "/services/projects",
     description:
       "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
     icon: "bx:bxs-user",
@@ -94,8 +100,9 @@ const features = [
 <div class="grid sm:grid-cols-2 lg:grid-cols-3 mt-16 gap-16">
   {
     features.map((item) => (
-      <div class="flex flex-col bg-slate-50 p-4 rounded-md transition-transform duration-300 hover:scale-110">
-        <Picture
+      <a href={item?.link}>
+      <div class="flex flex-col bg-slate-50 p-4 rounded-md transition-transform duration-300 hover:scale-110">        
+      <Picture
           src={item?.image ?? ""}
           alt={item?.title ?? ""}
           sizes="(max-width: 800px) 100vw, 400px"
@@ -116,6 +123,7 @@ const features = [
           <p class="text-slate-500 mt-2">{item.description}</p>
         </div>
       </div>
+    </a>
     ))
   }
 </div>
