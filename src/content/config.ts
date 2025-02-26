@@ -44,6 +44,7 @@ const ceoCollection = defineCollection({
     publishDate: z.string().transform(str => new Date(str)),
   }),
 });
+
 const directorsCollection = defineCollection({
   schema: z.object({
     draft: z.boolean(),
