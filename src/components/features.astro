@@ -25,6 +25,12 @@ const metaTitle = "Advertising Solutions";
 const metaKeywords =
   "outdoor advertising,indoor advertising,events,branding,production";
 
+let isHomePage = Astro.url.pathname === "/";
+
+const gridCols = isHomePage
+  ? "grid sm:grid-cols-2 lg:grid-cols-3"
+  : "grid sm:grid-cols-2 lg:grid-cols-2 max-w-4xl justify-center items-center mx-auto";
+
 const features = [
   {
     title: "Outdoor LED Advertising",
@@ -97,7 +103,12 @@ const features = [
   </p>
 </div>
 
-<div class="grid sm:grid-cols-2 lg:grid-cols-3 mt-16 gap-16">
+<div
+  class:list={{
+    "grid sm:grid-cols-2 mt-16 gap-16": true,
+    "lg:grid-cols-3": isHomePage,
+    "lg:grid-cols-2 max-w-4xl justify-center items-center mx-auto": !isHomePage,
+  }}>
   {
     features.map((item) => (
       <a href={item?.link}>
@@ -108,7 +119,7 @@ const features = [
             sizes="(max-width: 800px) 100vw, 400px"
             width={400}
             height={400}
-            class="w-full rounded-md group-hover:shadow-xl bg-white object-cover object-center "
+            class="w-full rounded-md group-hover:shadow-xl bg-white object-cover object-center"
             format="jpg"
           />
           <div class="flex gap-2 items-center justify-center my-2">

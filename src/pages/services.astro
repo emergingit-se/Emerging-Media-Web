@@ -28,52 +28,6 @@ const metaDescription =
 const metaTitle = "Advertising Solutions";
 const metaKeywords =
   "outdoor advertising,indoor advertising,events,branding,production";
-
-const features = [
-  {
-    title: "Outdoor LED Advertising",
-    description:
-      "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
-    icon: "bx:bxs-briefcase",
-    image: optimizedBackground.src!,
-  },
-  {
-    title: "Indoor LED Advertising",
-    description:
-      "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
-    icon: "bx:bxs-window-alt",
-    image: optimizedBackground1.src!,
-  },
-  {
-    title: "Events",
-    description:
-      "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!",
-    icon: "bx:bxs-file-find",
-    image: optimizedBackground2.src!,
-  },
-  {
-    title: "Hoardings and Branding",
-    description:
-      "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.",
-    icon: "bx:bxs-bot",
-    image: optimizedBackground3.src!,
-  },
-
-  {
-    title: "Productions",
-    description:
-      "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
-    icon: "bx:bxs-user",
-    image: optimizedBackground4.src!,
-  },
-  {
-    title: "Projects",
-    description:
-      "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
-    icon: "bx:bxs-user",
-    image: optimizedBackground5.src!,
-  },
-];
 ---
 
 <head>
@@ -90,6 +44,8 @@ const features = [
     <Sectionhead>
       <Fragment slot="title">Services</Fragment>
     </Sectionhead>
-    <div class="px-5 mb-12"><Features features={features} /></div>
+    <div class="px-5 mb-12">
+      <Features isHomePage={false} />
+    </div>
   </Layout>
 </Container>
