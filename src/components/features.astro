@@ -93,7 +93,13 @@ const features = [
   <meta property="keywords" content={metaKeywords} />
 </head>
 
-<div class="mt-16">
+<div
+  class="mt-16"
+  class:list={{
+    "visible": true,
+    "block": isHomePage,
+    "hidden": !isHomePage,
+  }}>
   <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight capitalize">
     advertising solutions
   </h2>
