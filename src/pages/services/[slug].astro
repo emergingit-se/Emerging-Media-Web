@@ -1,17 +1,16 @@
 ---
-import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
-import { Icon } from "astro-icon/components";
 import LEDOutdoor from "assets/LED - Outdoor.jpg";
 import Salon from "assets/Salon.jpg";
 import Event from "assets/Event.jpg";
 import Hoarding from "assets/Hoarding & Branding.jpg";
 import Production from "assets/Production (1).jpg";
 import Project from "assets/OGF_NOLIMIT.png";
+import { Icon } from "astro-icon/components";
+import { getCollection } from "astro:content";
 import { Picture, getImage } from "astro:assets";
 
-// Generate a new path for every collection entry
 export async function getStaticPaths() {
   const servicesEntries = await getCollection("services");
   return servicesEntries.map((entry) => ({
@@ -28,6 +27,7 @@ const optimizedBackground4 = await getImage({
   format: "webp",
 });
 const optimizedBackground5 = await getImage({ src: Project, format: "webp" });
+
 const features = [
   {
     title: "Outdoor LED Advertising",
@@ -116,11 +116,10 @@ const features = [
   },
 ];
 
-// Get the entry directly from the prop on render
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 
-const currentPath = Astro.url.pathname; // Get the current URL path
+const currentPath = Astro.url.pathname; 
 const matchedFeature = features.find((item) => item.link === currentPath);
 
 const isHomePage = currentPath === "/";
@@ -131,7 +130,7 @@ const isHomePage = currentPath === "/";
     <div class="mx-auto max-w-3xl mt-14">
       {
         isHomePage ? (
-          // Display all features on the homepage
+      
           features.map((feature) => (
             <div>
               <h2 class="text-2xl font-bold text-[#0A91D9] mb-4">
@@ -170,7 +169,7 @@ const isHomePage = currentPath === "/";
             </div>
           ))
         ) : matchedFeature ? (
-          // Display only the matched feature locations
+          
           <div>
             <h2 class="text-2xl font-bold text-[#0A91D9] mb-4">
               {matchedFeature.title}
@@ -201,7 +200,7 @@ const isHomePage = currentPath === "/";
             </div>
           </div>
         ) : (
-          // If no match found, display nothing or a message
+         
           <p class="text-center text-gray-500">
             No locations available for this service.
           </p>
