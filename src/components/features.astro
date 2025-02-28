@@ -39,6 +39,19 @@ const features = [
       "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
     icon: "bx:bxs-briefcase",
     image: optimizedBackground.src!,
+    locations: [
+      "LIBERTY BUILDING COLOMBO 3",
+      "TOWN HALL COLOMBO 7",
+      "DUTCH HOSPITAL COLOMBO 1",
+      "THILAKMA RAJAGIRIYA",
+      "RAJAGIRIYA LED SCREEN",
+      "IOC SEEDUWA",
+      "IOC MOUNT LAVINIA",
+      "IOC DEMATAGODA",
+      "Diyatha",
+      "Havelock",
+      "Borella",
+    ],
   },
   {
     title: "Indoor LED Advertising",
@@ -47,6 +60,13 @@ const features = [
       "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
     icon: "bx:bxs-window-alt",
     image: optimizedBackground1.src!,
+    locations: [
+      "LIBERTY BUILDING COLOMBO 3",
+      "TOWN HALL COLOMBO 7",
+      "DUTCH HOSPITAL COLOMBO 1",
+      "THILAKMA RAJAGIRIYA",
+      "RAJAGIRIYA LED SCREEN",
+    ],
   },
   {
     title: "Events",
@@ -55,6 +75,13 @@ const features = [
       "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!",
     icon: "bx:bxs-file-find",
     image: optimizedBackground2.src!,
+    locations: [
+      "LIBERTY BUILDING COLOMBO 3",
+      "TOWN HALL COLOMBO 7",
+      "DUTCH HOSPITAL COLOMBO 1",
+      "THILAKMA RAJAGIRIYA",
+      "RAJAGIRIYA LED SCREEN",
+    ],
   },
   {
     title: "Hoardings and Branding",
@@ -63,6 +90,7 @@ const features = [
       "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.",
     icon: "bx:bxs-bot",
     image: optimizedBackground3.src!,
+    locations: ["LIBERTY BUILDING COLOMBO 3", "Diyatha", "Havelock", "Borella"],
   },
 
   {
@@ -72,6 +100,7 @@ const features = [
       "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
     icon: "bx:bxs-user",
     image: optimizedBackground4.src!,
+    locations: ["LIBERTY BUILDING COLOMBO 3", "TOWN HALL COLOMBO 7", "Borella"],
   },
   {
     title: "Projects",
@@ -80,6 +109,13 @@ const features = [
       "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
     icon: "bx:bxs-user",
     image: optimizedBackground5.src!,
+    locations: [
+      "LIBERTY BUILDING COLOMBO 3",
+      "IOC DEMATAGODA",
+      "Diyatha",
+      "Havelock",
+      "Borella",
+    ],
   },
 ];
 ---
@@ -96,9 +132,9 @@ const features = [
 <div
   class="mt-16"
   class:list={{
-    "visible": true,
-    "block": isHomePage,
-    "hidden": !isHomePage,
+    visible: true,
+    block: isHomePage,
+    hidden: !isHomePage,
   }}>
   <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight capitalize">
     advertising solutions
@@ -138,6 +174,9 @@ const features = [
           </div>
           <div>
             <p class="text-slate-500 mt-2">{item.description}</p>
+            <div>
+            <p class="text-slate-500 mt-2">{item.locations}</p>
+          </div>
           </div>
         </div>
       </a>
