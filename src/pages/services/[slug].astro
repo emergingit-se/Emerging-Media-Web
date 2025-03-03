@@ -434,7 +434,7 @@ console.log(matchedFeature);
             </h2>
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {matchedFeature.locations.map((location) => (
-                <a href={matchedFeature.link}>
+                <a href={location.slug}>
                 <div
                   class="flex flex-col bg-slate-50 p-4 rounded-md transition-transform duration-300 hover:scale-105">
                   <Picture
@@ -451,7 +451,7 @@ console.log(matchedFeature);
                       <Icon class="text-white" name={matchedFeature.icon} />
                     </div>
                     <h3 class="font-semibold text-lg text-[#0A91D9]">
-                      {location}
+                      {location.name}
                     </h3>
                   </div>
                 </div>
@@ -467,5 +467,5 @@ console.log(matchedFeature);
         )
       }
     </div>
-  </Container>
+</Container>
 </Layout>
