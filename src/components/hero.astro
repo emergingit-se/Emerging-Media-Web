@@ -1,48 +1,48 @@
 ---
-import { Picture } from "astro:assets";
-import imageUrl from "assets/Background.jpg";
 import Link from "./ui/link.astro";
-import Dropdown from "./navbar/dropdown.astro";
-import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 import Logo from "assets/EMERGING MEDIA LOGO_WHITE_TRANSPRANT.png";
+import ImageUrl from "assets/Background.jpg";
+import Dropdown from "./navbar/dropdown.astro";
 import type MenuItem from "types/interfaces.ts";
+import { Picture } from "astro:assets";
+import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
 const menuitems: MenuItem[] = [
   {
     title: "Home",
     path: "/",
     alt: "",
-    description: ""
+    description: "",
   },
   {
     title: "About",
     path: "/about",
     alt: "",
-    description: ""
+    description: "",
   },
   {
     title: "Services",
     path: "/services",
     alt: "",
-    description: ""
+    description: "",
   },
   {
     title: "News",
     path: "/news",
     alt: "",
-    description: ""
+    description: "",
   },
   {
     title: "Careers",
     path: "/careers",
     alt: "",
-    description: ""
+    description: "",
   },
   {
     title: "Contact",
     path: "/contact",
     alt: "",
-    description: ""
+    description: "",
   },
   // {
   //   title: "Pro Version",
@@ -60,12 +60,13 @@ const menuitems: MenuItem[] = [
   //   ],
   // },
 ];
+
 ---
 
 <main class="relative w-full h-screen flex flex-col">
   <!-- Background Image -->
   <Picture
-    src={imageUrl}
+    src={ImageUrl}
     alt="Background Image"
     class="absolute inset-0 w-full h-full object-cover -z-10 bg-black/70"
   />
@@ -84,7 +85,7 @@ const menuitems: MenuItem[] = [
             format="webp,png"
             class="object-contain black-opacity-50"
           />
-          
+
           <!-- <span class="font-bold text-slate-800">Astro</span><span
             class="text-slate-500">ship</span
           > -->
@@ -139,27 +140,28 @@ const menuitems: MenuItem[] = [
   </header>
 
   <!-- Content -->
-  <div class="text-white text-center justify-center flex flex-col items-center h-screen z-10">
+  <div
+    class="text-white text-center justify-center flex flex-col items-center h-screen z-10">
     <div class="p-5 rounded-lg">
-    <h1
-      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter p-3">
-      Unleash Impactful OOH Advertising
-    </h1>
-    <p class="text-lg mt-4 text-white-600 max-w-xl justify-center mx-auto">
-      Emerging Media creates bold, high-impact OOH campaigns that drive
-      real-world results, capture attention like never before, and elevate your
-      brands presence in the world.
-    </p>
-    <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
-      <Link
-        href="#"
-        href="https://web3templates.com/templates/astroship-starter-website-template-for-astro"
-        target="_blank"
-        class="flex gap-1 items-center justify-center"
-        rel="noopener">
-        Scedule a Call
-      </Link>
+      <h1
+        class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter p-3">
+        Unleash Impactful OOH Advertising
+      </h1>
+      <p class="text-lg mt-4 text-white-600 max-w-xl justify-center mx-auto">
+        Emerging Media creates bold, high-impact OOH campaigns that drive
+        real-world results, capture attention like never before, and elevate
+        your brands presence in the world.
+      </p>
+      <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+        <Link
+          href="#"
+          href="https://web3templates.com/templates/astroship-starter-website-template-for-astro"
+          target="_blank"
+          class="flex gap-1 items-center justify-center"
+          rel="noopener">
+          Scedule a Call
+        </Link>
+      </div>
     </div>
-  </div>
   </div>
 </main>
