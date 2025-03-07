@@ -1,5 +1,4 @@
 ---
-
 import Salon from "assets/Salon.jpg";
 import Event from "assets/Event.jpg";
 import Layout from "@layouts/Layout.astro";
@@ -382,7 +381,6 @@ const currentPath = Astro.url.pathname;
 const matchedFeature = features.find((item) => item.link === currentPath);
 const isHomePage = currentPath === "/";
 
-console.log(matchedFeature);
 ---
 
 <Layout title={entry.data.title}>

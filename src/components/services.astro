@@ -1,12 +1,13 @@
 ---
 // @ts-ignore
-import { Icon } from "astro-icon/components";
-import LEDOutdoor from "assets/LED - Outdoor.jpg";
+
 import Salon from "assets/Salon.jpg";
 import Event from "assets/Event.jpg";
-import Hoarding from "assets/Hoarding & Branding.jpg";
-import Production from "assets/Production (1).jpg";
 import Project from "assets/OGF_NOLIMIT.png";
+import Hoarding from "assets/Hoarding & Branding.jpg";
+import LEDOutdoor from "assets/LED - Outdoor.jpg";
+import Production from "assets/Production (1).jpg";
+import { Icon } from "astro-icon/components";
 import { Picture, getImage } from "astro:assets";
 
 const optimizedBackground = await getImage({ src: LEDOutdoor, format: "webp" });

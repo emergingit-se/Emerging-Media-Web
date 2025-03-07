@@ -11,7 +11,7 @@ import { Picture, getImage } from "astro:assets";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
-import Features from "@components/features.astro";
+import ServicesComponent from "@components/services.astro";
 
 const optimizedBackground = await getImage({ src: LEDOutdoor, format: "webp" });
 const optimizedBackground1 = await getImage({ src: Salon, format: "webp" });
@@ -48,7 +48,7 @@ const metaKeywords =
       </Fragment>
     </Sectionhead>
     <div class="px-5 mb-12">
-      <Features isHomePage={false} />
+      <ServicesComponent isHomePage={false} />
     </div>
   </Layout>
 </Container>
