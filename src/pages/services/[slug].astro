@@ -1,9 +1,10 @@
 ---
+
+import Salon from "assets/Salon.jpg";
+import Event from "assets/Event.jpg";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import LEDOutdoor from "assets/LED - Outdoor.jpg";
-import Salon from "assets/Salon.jpg";
-import Event from "assets/Event.jpg";
 import Hoarding from "assets/Hoarding & Branding.jpg";
 import Production from "assets/Production (1).jpg";
 import Project from "assets/OGF_NOLIMIT.png";
@@ -374,7 +375,6 @@ const features = [
       ],
     },
 ];
-
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
