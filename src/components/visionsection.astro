@@ -1,5 +1,5 @@
 ---
-import { Picture, Image, getImage } from "astro:assets";
+import { Image, getImage } from "astro:assets";
 import Mission from "assets/mission.jpg";
 import Vision from "assets/vision.jpg";
 import About from "assets/about.jpg";
@@ -49,7 +49,9 @@ const menuitems: VisionItem[] = [
             format="jpg"
           />
           <div class="text-center p-4">
-            <h2 class="text-2xl font-bold text-black">{teamMemberEntry.title}</h2>
+            <h2 class="text-2xl font-bold text-black">
+              {teamMemberEntry.title}
+            </h2>
             <p class="text-sm text-slate-500">{teamMemberEntry.description}</p>
           </div>
         </div>
