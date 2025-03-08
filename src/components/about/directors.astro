@@ -1,6 +1,5 @@
 ---
 import { getCollection } from "astro:content";
-import { Image, Picture } from "astro:assets";
 
 // Filter team entries with 'draft: false' & date before current date
 const publishedTeamMembers = await getCollection("directors", ({ data }) => {
