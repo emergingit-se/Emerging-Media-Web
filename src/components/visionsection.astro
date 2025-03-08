@@ -1,9 +1,9 @@
 ---
-import { Image, getImage } from "astro:assets";
-import Mission from "assets/mission.jpg";
-import Vision from "assets/vision.jpg";
 import About from "assets/about.jpg";
+import Vision from "assets/vision.jpg";
+import Mission from "assets/mission.jpg";
 import type VisionItem from "types/interfaces.ts";
+import { Image, getImage } from "astro:assets";
 
 const optimizedBackground = await getImage({ src: Mission, format: "webp" });
 const optimizedBackground1 = await getImage({ src: Vision, format: "webp" });
