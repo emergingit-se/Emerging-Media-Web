@@ -8,6 +8,7 @@ import LEDOutdoor from "assets/LED - Outdoor.jpg";
 import Production from "assets/Production (1).jpg";
 import { Icon } from "astro-icon/components";
 import { Picture, getImage } from "astro:assets";
+import Modal from "./services/modal.astro";
 
 const optimizedBackground = await getImage({ src: LEDOutdoor, format: "webp" });
 const optimizedBackground1 = await getImage({ src: Salon, format: "webp" });
@@ -118,6 +119,20 @@ const features = [
     ],
   },
 ];
+
+let isModalOpen = false;
+let selectedLocation = null;
+
+function openModal(location) {
+  selectedLocation = location;
+  isModalOpen = true;
+}
+
+function closeModal() {
+  isModalOpen = false;
+  selectedLocation = null;
+}
+
 ---
 
 <head>
@@ -154,7 +169,7 @@ const features = [
   {
     features.map((item) => (
       <a href={item?.link}>
-        <div class="flex flex-col bg-slate-50 p-4 rounded-md transition-transform duration-300 hover:scale-110">
+        <div class="flex flex-col bg-slate-50 p-4 rounded-md transition-transform duration-300 hover:scale-110" onclick={() => openModal(location)}>
           <Picture
             src={item?.image ?? ""}
             alt={item?.title ?? ""}
